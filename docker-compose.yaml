@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  server:
+    container_name: server
+    build:
+        context: .
+        dockerfile: .docker/Dockerfile
+    #command: ["caddy", "run", "--config", "/etc/caddy/Caddyfile"]
+    ports:
+      - "8080:8000"
+    volumes:
+      - ./:/var/www
